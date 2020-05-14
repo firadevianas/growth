@@ -90,10 +90,4 @@ describe('Click Header',()=>{
           .get('.ant-dropdown-menu-item').eq(1).click()
         cy.url().should('eq','https://stg.ekrut.com/talent/settings')
     })
-    // it('Signout',()=>{
-    //     cy.wait(1000)
-    //     cy.get('.eds-navheader__profile').click()
-    //       .get('.ant-dropdown-menu-item').eq(3).click()
-    //     cy.url().should('eq','https://stg.ekrut.com/login')
-    // })
 })
