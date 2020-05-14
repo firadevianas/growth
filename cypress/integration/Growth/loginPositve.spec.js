@@ -5,7 +5,7 @@ describe('Login Success',()=>{
     })
 
     it('click login button',()=>{
-        cy.xpath('/html/body/div[1]/header/div/div[2]/button[2]').click()
+        cy.get('.eds-header__right > .ant-btn').eq(1).click()
     })
     it('Pop-up Login appear',()=>{
         cy.get('.content__header--is-left >.ant-typography').contains('Login to Your Account')
