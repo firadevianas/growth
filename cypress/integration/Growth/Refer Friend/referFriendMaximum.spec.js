@@ -1,3 +1,4 @@
+//reach maximum limit to invite talent
 describe('Login Success',()=>{
     
     it('navigate to the url',()=>{
@@ -20,11 +21,11 @@ describe('Login Success',()=>{
     it('input valid password',()=>{
         cy.get('.ant-input-password > .ant-input')
         .should('be.visible')
-        .type('ekrut1234')
+        .type('ekrut123')
     })
 
-    it('Click button login',()=>{
-        cy.get('.content__body > .ant-btn').click()
+    it('Click Submit form login',()=>{
+        cy.get('form').submit()
     })
     it('User Checks URL', () => {
         cy.wait(1000)
@@ -33,7 +34,7 @@ describe('Login Success',()=>{
     })
 
 })
-describe('Refer friend',()=>{
+describe('Refer friend more than 5 times in one day',()=>{
     it('click menu refer',()=>{
         cy.get('.ant-menu-item').eq(2).click()
         cy.url().should('eq','https://stg.ekrut.com/talent/refer')
@@ -41,28 +42,24 @@ describe('Refer friend',()=>{
     it('scroll to form refer friend',()=>{
         cy.scrollTo('center')
     })
-    it('fill friend name',()=>{
+    it('fill existing friend name',()=>{
         cy.get('.tl-refer-invitation__form > .form-group').eq(0).type(name)
     })
-    it('fill friend email',()=>{
+    it('fill existing friend email',()=>{
         cy.get('.tl-refer-invitation__form > .form-group').eq(1).type(email)
     })
-    it('fill friend phone number',()=>{
+    it('fill existing friend phone number',()=>{
         cy.get('.tl-refer-invitation__form > .form-group').eq(2).type(randomId)
     })
     it('click button sumbit form refer',()=>{
-        cy.get('form').submit()
+        cy.get('.text-left > .btn').click()
     })
-    it('Appear toast success',()=>{
-        cy.get('.c-toast__text > .c-toast__text-title').should('have.text','SUCCESS')
-        cy.get('.c-toast__text > .c-toast__text-body').should('have.text','Invitation email send')
-    })
-    it('List Referrer friend appear in Tab Invited',()=>{
-        cy.get('.c-tabs__header__label').contains('Invited').click()
-        cy.get('.tl-dashboard__pagination > .page-item').eq(6).click()
-        cy.get('.c-tabs__content >.row >.col-12').contains(email).should('have.text',email)
+    it('Appear toast failed',()=>{
+        cy.get('.c-toast__text > .c-toast__text-title').should('have.text','FAILED')
+        cy.get('.c-toast__text > .c-toast__text-body').should('Sorry. You have already reached maximum limit to invite a friend. You can invite your friend again tomorrow')
     })
 })
+
 const id = () => Cypress._.random(0, 1e6)
 const randomId = id()
 const email = `refer${randomId}` + '@testrefer.com'

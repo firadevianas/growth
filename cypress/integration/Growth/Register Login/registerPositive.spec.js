@@ -14,13 +14,13 @@ describe('Login Success',()=>{
     it('input valid talent name',()=>{
         cy.get('.content__body > .eds-input-group').eq(0)
         .should('be.visible')
-        .type('Rabbit Satu')
+        .type(name)
     })
 
     it('input valid email',()=>{
         cy.get('.content__body > .eds-input-group').eq(1)
         .should('be.visible')
-        .type('rabbitsatu@gmail.com')
+        .type(email)
     })
     it('input valid password > 6 char',()=>{
         cy.get('.content__body > .eds-input-group').eq(2)
@@ -41,8 +41,8 @@ describe('Login Success',()=>{
         cy.wait(1000)
         cy.get('.content__body > .eds-input-group').eq(5).click()
     })
-    it('Click Submit form login',()=>{
-        cy.get('form').submit()
+    it('Click button Register',()=>{
+        cy.get('.content__body > .ant-btn').click()
     })
     it('Modal Thankyou for register appear',()=>{
         cy.get('.gst-verify-modal__content > .container').eq(0).should('have.text','Thank You for Registering!')
@@ -51,3 +51,9 @@ describe('Login Success',()=>{
         cy.get('.container > .btn').click()
     })
 })
+
+const id = () => Cypress._.random(0, 1e6)
+const randomId = id()
+const email = `testing${randomId}` + '@testing.com'
+const randomLastname = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 4);
+const name = 'testing ' + randomLastname

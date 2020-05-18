@@ -22,9 +22,8 @@ describe('Login Success',()=>{
         .should('be.visible')
         .type('ekrut123')
     })
-
-    it('Click Submit form login',()=>{
-        cy.get('form').submit()
+    it('Click button login',()=>{
+        cy.get('.content__body > .ant-btn').click()
     })
     it('User Checks URL', () => {
         cy.wait(10000)
