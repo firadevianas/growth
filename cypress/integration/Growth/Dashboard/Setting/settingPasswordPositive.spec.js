@@ -46,7 +46,7 @@ describe('Change password',()=>{
         cy.get('.form-group > .password ').eq(1).type('ekrut1234')
     })
     it('fill confirm password',()=>{
-        cy.get('.form-group > .password ').eq(2).type('ekrut1234')
+        cy.get('.form-group > .password ').eq(2).type('ekrut1234') 
     })
     it('click button save changes',()=>{
         cy.get('.col-md-7 > .btn').click()
