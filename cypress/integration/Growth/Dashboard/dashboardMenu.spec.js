@@ -20,7 +20,7 @@ describe('Login Success',()=>{
     it('input valid password',()=>{
         cy.get('.ant-input-password > .ant-input')
         .should('be.visible')
-        .type('ekrut123')
+        .type('ekrut1234')
     })
 
     it('Click Submit form login',()=>{
