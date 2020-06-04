@@ -12,19 +12,19 @@ describe('Login Success',()=>{
     })
 
     it('input valid user email',()=>{
-        cy.get(':nth-child(1) > .ant-input')
+        cy.get('input[name=email]')
         .should('be.visible')
         .type('teststaging1@gmail.com').should('have.value','teststaging1@gmail.com')
     })
 
     it('input valid password',()=>{
-        cy.get('.ant-input-password > .ant-input')
+        cy.get('input[name=password]')
         .should('be.visible')
         .type('ekrut123')
     })
 
     it('Click Submit form login',()=>{
-        cy.get('form').submit()
+        cy.get('.content__body > .ant-btn-primary').click();
     })
     it('User Checks URL', () => {
         cy.wait(10000)
