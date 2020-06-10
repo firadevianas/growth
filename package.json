@@ -10,8 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.5.0",
+    "@testing-library/cypress": "^6.0.0",
+    "cypress": "^4.7.0",
     "cypress-file-upload": "^3.5.3",
     "cypress-xpath": "^1.4.0"
+  },
+  "dependencies": {
+    "wait-on": "^5.0.1"
   }
 }
