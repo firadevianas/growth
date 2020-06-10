@@ -23,6 +23,6 @@ describe('Refer friend empty field',()=>{
     })
     it('Appear toast failed',()=>{
         cy.get('.c-toast__text > .c-toast__text-title').should('have.text','FAILED')
-        cy.get('.c-toast__text > .c-toast__text-body').should('have.text','Sorry. Talent that you refer already become Ekrut Talent')
+        cy.get('.c-toast__text > .c-toast__text-body').should('have.text','Oops, sorry! Your friend is already become our talent. Let’s help another friend.')
     })
 })

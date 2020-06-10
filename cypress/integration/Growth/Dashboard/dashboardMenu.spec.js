@@ -1,6 +1,6 @@
 describe('Click Header',()=>{
     it('login',()=>{
-        cy.login({email:'firatest@gmail.com',pass:'ekrut123'})
+        cy.login({email:'firadevianas@gmail.com',pass:'ekrut123'})
     })
     it('click on EKRUT logo',()=>{
         cy.wait(2000)
@@ -23,15 +23,14 @@ describe('Click Header',()=>{
         cy.wait(1000)
         cy.get('.ant-menu-item').eq(2).click()
         cy.url().should('eq','https://stg.ekrut.com/talent/refer')
-        cy.get('.col-12 > .tl-refer__title').should('have.text','Referral and Rewards Program')
+        cy.get('.col-12 > .tl-refer__title').should('have.text','Refer your friend and get rewards')
+        cy.get('.col-12 > .tl-refer__subtitle').should('have.text','Help your friend and earnup to 5.000.000')
     })
-    // it('click on Media',()=>{
-    //     cy.wait(1000)
-    //     cy.get('.ant-menu-item').eq(3).click()
-    //     cy.location().should((location)=>{
-    //         expect(location.href).to.eq('https://stg.ekrut.com/media')
-    //     })
-    // })
+    it('check on Media',()=>{
+        cy.wait(1000)
+        cy.get('.ant-menu-item > a').eq(3).should('have.prop','href').and('equal','https://stg.ekrut.com/media')
+        
+    })
     it('click on Chat',()=>{
         cy.get('.eds-navheader-mini-icon').contains('CHAT').click()
         cy.url().should('eq','https://stg.ekrut.com/talent/chat')
