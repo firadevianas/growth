@@ -1,6 +1,6 @@
 describe('current password same with new password',()=>{
     it('login',()=>{
-        cy.login({email:'rabbitlima@gmail.com',pass:'ekrut123'})
+        cy.login({email:'staging1@gmail.com',pass:'ekrut123'})
     })
     it('click on setting menu',()=>{
         cy.get('.eds-navheader__profile').click()

@@ -23,8 +23,9 @@ describe('Click Header',()=>{
         cy.wait(1000)
         cy.get('.ant-menu-item').eq(2).click()
         cy.url().should('eq','https://stg.ekrut.com/talent/refer')
-        cy.get('.col-12 > .tl-refer__title').should('have.text','Refer your friend and get rewards')
-        cy.get('.col-12 > .tl-refer__subtitle').should('have.text','Help your friend and earnup to 5.000.000')
+        cy.wait(10000)
+        cy.get('.col-12 > .tl-refer__title').eq(0).should('have.text','Refer your friend and get rewards')
+        cy.get('.col-12 > .tl-refer__subtitle').eq(1).should('have.text','Help your friend and earnup to 5.000.000')
     })
     it('check on Media',()=>{
         cy.wait(1000)

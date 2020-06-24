@@ -1,3 +1,4 @@
 {
-    "viewportWidth": 1349
+    "viewportWidth": 1349,
+    "chromeWebSecurity": false
 }

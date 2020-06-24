@@ -35,25 +35,71 @@ describe('Login Success',()=>{
     it('input valid phone number',()=>{
         cy.get('.content__body > .eds-input-group').eq(4)
         .should('be.visible')
-        .type('568279921')
+        .type(phonenum)
+    })
+    it('Click button Register',()=>{
+        cy.get('.content__body > .ant-btn').click()
     })
     it('agree to term and condition',()=>{
         cy.wait(1000)
-        cy.get('.content__body > .eds-input-group').eq(5).click()
+        cy.scrollTo('bottom')
+        cy.get('input[type=checkbox]').check()
     })
     it('Click button Register',()=>{
         cy.get('.content__body > .ant-btn').click()
     })
     it('Modal Thankyou for register appear',()=>{
-        cy.get('.gst-verify-modal__content > .container').eq(0).should('have.text','Thank You for Registering!')
+        cy.get('.gst-verify-email__title').should('have.text','Thank You for Registering!')
     })
     it('click button done on modal',()=>{
         cy.get('.container > .btn').click()
     })
 })
 
+const getIframeDocument = () => {
+    return cy
+    .get('iframe[class="i6jjn6"]')
+    // Cypress yields jQuery element, which has the real
+    // DOM element under property "0".
+    // From the real DOM iframe element we can get
+    // the "document" element, it is stored in "contentDocument" property
+    // Cypress "its" command can access deep properties using dot notation
+    // https://on.cypress.io/its
+    .its('0.contentDocument').should('exist')
+  }
+
+  const getIframeBody = () => {
+    // get the document
+    return getIframeDocument()
+    // automatically retries until body is loaded
+    .its('body').should('not.be.undefined')
+    // wraps "body" DOM element to allow
+    // chaining more Cypress commands, like ".find(...)"
+    .then(cy.wrap)
+  }
+
+describe('verify email mailtrap',()=>{
+    it('visit mailtrap and login mailtrap',()=>{
+        cy.visit('https://mailtrap.io/')
+        cy.get('.signin_block > .button').eq(0).click()
+        cy.get('input[id=user_email]').type('taufiq@ekrut.com')
+        cy.get('input[type=password]').type('qwer1234')
+        cy.get('input[name=commit]').click()
+        cy.get('.inbox_name').contains('staging').click()
+        cy.get('.subject').contains('Welcome to EKRUT').eq(0).click()
+        cy.wait(2000)
+    })
+    it('click verify account',()=>{
+        getIframeBody().should('contains','Verify my account').click({force: true})
+        // cy.contains('Hi ').focus()
+        // cy.window().scrollTo(0,500)
+        // cy.get('a').should('contain','Verify my account')
+        // .and('have.attr','href').click()
+    })
+})
 const id = () => Cypress._.random(0, 1e6)
 const randomId = id()
 const email = `testing${randomId}` + '@testing.com'
 const randomLastname = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 4);
 const name = 'testing ' + randomLastname
+const phonenum = `81${randomId}`

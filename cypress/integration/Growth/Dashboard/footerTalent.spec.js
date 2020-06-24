@@ -1,6 +1,6 @@
 describe('Verify Link footer',()=>{
     it('login',()=>{
-        cy.login({email:'firadevianas@gmail.com',pass:'ekrut1234'})
+        cy.login({email:'firadevianas@gmail.com',pass:'ekrut123'})
     })
     it('verify About',()=>{
         cy.get('.gst-footer__about--link').eq(0).should('have.prop','href').and('equal','https://stg.ekrut.com/about')

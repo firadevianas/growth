@@ -23,22 +23,26 @@ describe('forgot password',()=>{
     })
 })
 
-describe('forgot password negative',()=>{
-    it('leave email field empty',()=>{
+describe('Successfully send forget password',()=>{
+    it('filled email field with valid email',()=>{
+        cy.get('input[name=email]').type('staging3@gmail.com')
         cy.get('button[type=submit]').click()
-        cy.get('.form-invalid-feedback').should('have.text','This field is required*')
-    })
-    it('fill invalid email format',()=>{
-        cy.get('input[name=email]').type('firatest')
-        cy.get('.form-invalid-feedback').should('have.text','email must be a valid email')
-    })
-    it('send to not registered email',()=>{
-        cy.get('input[name=email]').type('firaawwwww@gmail.com')
-        cy.get('button[type=submit]').click()
-        cy.get('.c-toast__text-title').should('have.text','FAILED')
-        cy.get('.c-toast__text-body').should('have.text','record not found')
+        cy.get('.c-toast__text-title').should('have.text','SUCCESS')
+        cy.get('.c-toast__text-body').should('have.text','Instructions to reset your password have been sent to you. Please check your email.')
+        cy.url().should('eq','https://stg.ekrut.com/')
+        cy.wait(5000)
     })
 })
 
-
-
+describe('Reset password',()=>{
+    it('visit mailtrap and login mailtrap',()=>{
+        cy.visit('https://mailtrap.io/')
+        cy.get('.signin_block > .button').eq(0).click()
+        cy.get('input[id=user_email]').type('taufiq@ekrut.com')
+        cy.get('input[type=password]').type('qwer1234')
+        cy.get('input[name=commit]').click()
+        cy.get('.inbox_name').contains('staging').click()
+        cy.get('.subject').contains('Reset Password Instruction.').eq(0).click()
+        cy.wait(2000)
+    })
+})

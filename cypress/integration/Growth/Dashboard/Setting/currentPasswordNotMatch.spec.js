@@ -1,6 +1,6 @@
 describe('new password not match with confirm password',()=>{
     it('login',()=>{
-        cy.login({email:'rabbitenam@gmail.com',pass:'ekrut123'})
+        cy.login({email:'staging1@gmail.com',pass:'ekrut123'})
     })
     it('click on setting menu',()=>{
         cy.get('.eds-navheader__profile').click()

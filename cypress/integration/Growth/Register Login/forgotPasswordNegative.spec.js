@@ -23,12 +23,22 @@ describe('forgot password',()=>{
     })
 })
 
-describe('Successfully send forget password',()=>{
-    it('filled email field with valid email',()=>{
-        cy.get('input[name=email]').type('firatest@gmail.com')
+describe('forgot password negative',()=>{
+    it('leave email field empty',()=>{
         cy.get('button[type=submit]').click()
-        cy.get('.c-toast__text-title').should('have.text','SUCCESS')
-        cy.get('.c-toast__text-body').should('have.text','Instructions to reset your password have been sent to you. Please check your email.')
-        cy.url().should('eq','https://stg.ekrut.com/')
+        cy.get('.form-invalid-feedback').should('have.text','This field is required*')
+    })
+    it('fill invalid email format',()=>{
+        cy.get('input[name=email]').type('firatest')
+        cy.get('.form-invalid-feedback').should('have.text','email must be a valid email')
+    })
+    it('send to not registered email',()=>{
+        cy.get('input[name=email]').type('firaawwwww@gmail.com')
+        cy.get('button[type=submit]').click()
+        cy.get('.c-toast__text-title').should('have.text','FAILED')
+        cy.get('.c-toast__text-body').should('have.text','record not found')
     })
 })
+
+
+

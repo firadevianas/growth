@@ -14,7 +14,7 @@ describe('Login Success',()=>{
     it('input valid user email',()=>{
         cy.get('input[name=email]')
         .should('be.visible')
-        .type('teststaging1@gmail.com').should('have.value','teststaging1@gmail.com')
+        .type('staging1@gmail.com').should('have.value','staging1@gmail.com')
     })
 
     it('input valid password',()=>{

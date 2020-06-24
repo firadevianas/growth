@@ -1,6 +1,6 @@
 describe('leave field empty on form setting password',()=>{
     it('login',()=>{
-        cy.login({email:'firatest@gmail.com',pass:'ekrut123'})
+        cy.login({email:'staging1@gmail.com',pass:'ekrut123'})
     })
     it('click on setting menu',()=>{
         cy.get('.eds-navheader__profile').click()
