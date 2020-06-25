@@ -16,6 +16,7 @@
     "cypress-xpath": "^1.4.0"
   },
   "dependencies": {
+    "cypress-iframe": "^1.0.1",
     "wait-on": "^5.0.1"
   }
 }

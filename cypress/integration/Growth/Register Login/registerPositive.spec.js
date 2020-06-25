@@ -58,25 +58,14 @@ describe('Login Success',()=>{
 
 const getIframeDocument = () => {
     return cy
-    .get('iframe[class="i6jjn6"]')
-    // Cypress yields jQuery element, which has the real
-    // DOM element under property "0".
-    // From the real DOM iframe element we can get
-    // the "document" element, it is stored in "contentDocument" property
-    // Cypress "its" command can access deep properties using dot notation
-    // https://on.cypress.io/its
-    .its('0.contentDocument').should('exist')
-  }
-
-  const getIframeBody = () => {
-    // get the document
-    return getIframeDocument()
-    // automatically retries until body is loaded
-    .its('body').should('not.be.undefined')
-    // wraps "body" DOM element to allow
-    // chaining more Cypress commands, like ".find(...)"
-    .then(cy.wrap)
-  }
+    .get('iframe[title="Message HTML"]')
+    .its('0.contentDocument')
+}
+const getIframeBody = () => {
+   return getIframeDocument()
+   .its('body').should('not.be.undefined')
+   .then(cy.wrap)
+}
 
 describe('verify email mailtrap',()=>{
     it('visit mailtrap and login mailtrap',()=>{
@@ -90,11 +79,7 @@ describe('verify email mailtrap',()=>{
         cy.wait(2000)
     })
     it('click verify account',()=>{
-        getIframeBody().should('contains','Verify my account').click({force: true})
-        // cy.contains('Hi ').focus()
-        // cy.window().scrollTo(0,500)
-        // cy.get('a').should('contain','Verify my account')
-        // .and('have.attr','href').click()
+       getIframeBody().find('.main').contains('Verify my account').click()      
     })
 })
 const id = () => Cypress._.random(0, 1e6)

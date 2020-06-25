@@ -34,6 +34,17 @@ describe('Successfully send forget password',()=>{
     })
 })
 
+const getIframeDocument = () => {
+    return cy
+    .get('iframe[title="Message HTML"]')
+    .its('0.contentDocument')
+}
+const getIframeBody = () => {
+   return getIframeDocument()
+   .its('body').should('not.be.undefined')
+   .then(cy.wrap)
+}
+
 describe('Reset password',()=>{
     it('visit mailtrap and login mailtrap',()=>{
         cy.visit('https://mailtrap.io/')
@@ -44,5 +55,8 @@ describe('Reset password',()=>{
         cy.get('.inbox_name').contains('staging').click()
         cy.get('.subject').contains('Reset Password Instruction.').eq(0).click()
         cy.wait(2000)
+    })
+    it('click button change password',()=>{
+        getIframeBody().find('.main').contains('Change My Password').click()
     })
 })
