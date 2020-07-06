@@ -47,6 +47,7 @@ describe('Login Success',()=>{
     })
     it('Click button Register',()=>{
         cy.get('.content__body > .ant-btn').click()
+        cy.wait(10000)
     })
     it('Modal Thankyou for register appear',()=>{
         cy.get('.gst-verify-email__title').should('have.text','Thank You for Registering!')
