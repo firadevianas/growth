@@ -1,6 +1,6 @@
 describe('edit personal information',()=>{
     it('login',()=>{
-        cy.login({email:'poohdua@gmail.com',pass:'ekrut123'})
+        cy.login({email:'poohempat@gmail.com',pass:'ekrut123'})
     })
     it('click icon pencil to change profile picture',()=>{
         cy.wait(100)
@@ -56,9 +56,12 @@ describe('fill personal information',()=>{
           .type('https://testyes')
     })
     it('Click Save button',()=>{
-        cy.get('form').submit()
+        cy.get('button[type=submit]').click()
+        cy.wait(500)
         cy.get('.c-toast__text').should('be.visible')
           .get('.c-toast__text-title').should('have.text','SUCCESS')
           .get('.c-toast__text-body').should('have.text','Your profile has been successfully updated')
     })
 })
+
+
