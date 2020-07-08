@@ -27,7 +27,7 @@ describe('edit preference',()=>{
           .type('Looking for new experience')
     })
     it('input Position level preference',()=>{
-        cy.get('.css-9favbc-control').click()
+        cy.get('.css-1hwfws3').eq(2).scrollIntoView().click()
           .type('Associate')
           .get('.css-11unzgr').eq(0).click()
     })

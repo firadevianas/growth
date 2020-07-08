@@ -1,6 +1,6 @@
 describe('edit skill',()=>{
     it('login',()=>{
-        cy.login({email:'poohempat@gmail.com',pass:'ekrut123'})
+        cy.login({email:'poohtiga@gmail.com',pass:'ekrut123'})
     })
     it('click icon pencil to change profile picture',()=>{
         cy.wait(100)
