@@ -1,6 +1,6 @@
 describe('logout',()=>{
   it('login',()=>{
-    cy.login({email:'firatest@gmail.com',pass:'ekrut123'})
+    cy.login({email:'firadevianas@gmail.com',pass:'ekrut123'})
 })
     it('Signout',()=>{
         cy.wait(1000)

@@ -1,7 +1,7 @@
 
 describe('Refer friend',()=>{
     it('login',()=>{
-        cy.login({email:'rabbitempat@gmail.com',pass:'ekrut123'})
+        cy.login({email:'staging2@gmail.com',pass:'ekrut123'})
     })
     it('click menu refer',()=>{
         cy.get('.ant-menu-item').eq(2).click()
@@ -28,7 +28,7 @@ describe('Refer friend',()=>{
     })
     it('List Referrer friend appear in Tab Invited',()=>{
         cy.get('.c-tabs__header__label').contains('Invited').click()
-        cy.get('.tl-dashboard__pagination > .page-item').eq(6).click()
+        //cy.get('.tl-dashboard__pagination > .page-item').eq(6).click()
         cy.get('.c-tabs__content >.row >.col-12').contains(email).should('have.text',email)
     })
 })

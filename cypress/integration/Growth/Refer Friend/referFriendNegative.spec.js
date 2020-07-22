@@ -1,6 +1,6 @@
 describe('Refer friend empty field',()=>{
     it('login',()=>{
-        cy.login({email:'rabbitempat@gmail.com',pass:'ekrut123'})
+        cy.login({email:'staging4@gmail.com',pass:'ekrut123'})
     })
     it('click menu refer',()=>{
         cy.get('.ant-menu-item').eq(2).click()
