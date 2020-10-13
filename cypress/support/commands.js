@@ -24,11 +24,10 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 Cypress.Commands.add('login',(user)=>{
-    cy.visit('https://stg.ekrut.com');
+    cy.visit('https://stg.ekrut.com/');
     cy.get('.eds-header__right > .ant-btn').eq(1).click();
     cy.get('.content__header--is-left >.ant-typography').contains('Login to Your Account');
     cy.get('input[name=email]').type(user.email);
     cy.get('input[name=password]').type(user.pass);
     cy.get('.content__body > .ant-btn-primary').click();
-    cy.wait(10000)
 })

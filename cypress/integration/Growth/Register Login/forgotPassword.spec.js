@@ -36,7 +36,7 @@ describe('Successfully send forget password',()=>{
 
 const getIframeDocument = () => {
     return cy
-    .get('iframe[title="Message HTML"]')
+    .get('iframe[title="Message view"]')
     .its('0.contentDocument')
 }
 const getIframeBody = () => {

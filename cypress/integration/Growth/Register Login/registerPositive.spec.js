@@ -37,6 +37,10 @@ describe('Login Success',()=>{
         .should('be.visible')
         .type(phonenum)
     })
+    it('input position category',()=>{
+        cy.get('input[id="react-select-2-input"]').click({force: true})
+        cy.get('.css-dpec0i-option').click()
+    })
     it('Click button Register',()=>{
         cy.get('.content__body > .ant-btn').click()
     })
@@ -59,7 +63,7 @@ describe('Login Success',()=>{
 
 const getIframeDocument = () => {
     return cy
-    .get('iframe[title="Message HTML"]')
+    .get('iframe[title="Message view"]')
     .its('0.contentDocument')
 }
 const getIframeBody = () => {
