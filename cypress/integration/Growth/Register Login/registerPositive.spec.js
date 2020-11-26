@@ -1,7 +1,7 @@
 describe('Login Success',()=>{
     
     it('navigate to the url',()=>{
-        cy.visit('https://stg.ekrut.com')
+        cy.visit('http://devel.ekrut.com')
     })
 
     it('click register button',()=>{
@@ -38,20 +38,24 @@ describe('Login Success',()=>{
         .type(phonenum)
     })
     it('input position category',()=>{
-        cy.get('input[id="react-select-2-input"]').click({force: true})
-        cy.get('.css-dpec0i-option').click()
+        cy.get('.css-1hwfws3').click()
+        cy.get('.css-11unzgr > .css-fk865s-option').its('length').then(($lenght)=>{
+            const randSelect = Cypress._.random(0, $lenght - 1);
+            cy.get('.css-11unzgr > .css-fk865s-option').eq(randSelect).click()
+        })
+        // cy.get('input[id="react-select-2-input"]').click({force: true})
+        // cy.get('.css-dpec0i-option').click()
     })
     it('Click button Register',()=>{
         cy.get('.content__body > .ant-btn').click()
     })
     it('agree to term and condition',()=>{
-        cy.wait(1000)
         cy.scrollTo('bottom')
         cy.get('input[type=checkbox]').check()
     })
     it('Click button Register',()=>{
         cy.get('.content__body > .ant-btn').click()
-        cy.wait(10000)
+        cy.wait(500)
     })
     it('Modal Thankyou for register appear',()=>{
         cy.get('.gst-verify-email__title').should('have.text','Thank You for Registering!')
@@ -81,7 +85,7 @@ describe('verify email mailtrap',()=>{
         cy.get('input[name=commit]').click()
         cy.get('.inbox_name').contains('staging').click()
         cy.get('.subject').contains('Welcome to EKRUT').eq(0).click()
-        cy.wait(2000)
+        cy.wait(1000)
     })
     it('click verify account',()=>{
        getIframeBody().find('.main').contains('Verify my account').click()      

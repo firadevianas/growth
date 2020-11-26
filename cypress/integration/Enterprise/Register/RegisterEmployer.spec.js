@@ -1,16 +1,10 @@
 describe('User Register', () => {
     it('User Visits Ekrut Platform', () => {
-    cy.visit('http://devel.ekrut.com/login')
+    cy.visit('http://devel.ekrut.com/employers')
     })
 
     it('User click Register button',() => {
         cy.get('.eds-header__right > :nth-child(1)')
-        .should('be.visible')
-        .click()
-    })
-
-    it('User Click Tab Employer', () => {
-        cy.get('.c-tabs__header__label > :nth-child(2)')
         .should('be.visible')
         .click()
     })

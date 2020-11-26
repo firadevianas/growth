@@ -1,91 +1,7 @@
-//Onboarding Experience success
-describe('Submit Onboarding experience success',()=>{
+describe('submit onboarding 2',()=>{
     it('login',()=>{
         cy.login({email:'testing656006@testing.com',pass:'ekrut123'})
     })
-    it('fill up company name',()=>{
-        cy.wait(2000)
-        cy.xpath('/html/body/div[1]/div[1]/div/div/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]').click()
-          .type('progresstech')
-    })
-    it('select company name',()=>{
-        cy.wait(2000)
-        cy.get('.css-11unzgr').eq(0).click()
-    })
-    it('fill up position name',()=>{
-        cy.xpath('/html/body/div[1]/div[1]/div/div/div[2]/form/div[2]/div[2]/div/div[1]/div[1]/div[1]').click()
-          .type('frontend')
-    })
-    it('select position name',()=>{
-        cy.wait(2000)
-        cy.xpath('//*[@id="react-select-3-option-0"]').eq(0).click()
-    })
-    it('fill up position function',()=>{
-        cy.xpath('/html/body/div[1]/div[1]/div/div/div[2]/form/div[3]/div[2]/div/div[1]/div/div[1]').click()
-          .type('frontend')
-    })
-    it('select position fuction',()=>{
-        cy.wait(2000)
-        cy.xpath('//*[@id="react-select-2-option-0"]').click()
-    })
-    it('fill start date',()=>{
-        cy.get('.tl-onboardingv2-field__multi-input').eq(0).click()
-    })
-    it('click previous year btn',()=>{
-        cy.get('.ant-picker-header-super-prev-btn').click()
-    })
-    it('choose month',()=>{
-        cy.get('.ant-picker-cell-inner').eq(2).click()
-    })
-    it('clik checkbox present',()=>{
-        cy.get('.ant-checkbox-input').click()
-    })
-    it('clik position level',()=>{
-        cy.xpath('/html/body/div[1]/div[1]/div/div/div[2]/form/div[5]/div[2]/div/div[1]/div[1]/div[1]').click()
-    })
-    it('select position level',()=>{
-        cy.get('.css-fk865s-option').eq(10).click()
-    })
-    it('click business fields',()=>{
-        cy.xpath('/html/body/div[1]/div[1]/div/div/div[2]/form/div[6]/div[2]/div/div[1]').click()
-          .type('Careers and Recruiting')
-    })
-    it('select Business fields',()=>{
-        cy.get('.css-kj6f9i-menu').eq(0).click()
-        cy.wait(2000)
-    })
-})
-context('Cypress.Screenshot', function () {
-    it('cy.screenshot() - take a screenshot', () => {
-      // https://on.cypress.io/screenshot
-      cy.screenshot('onboarding1')
-    })
-
-    it('Cypress.Screenshot.defaults() - change default config of screenshots', function () {
-      Cypress.Screenshot.defaults({
-        blackout: ['.foo'],
-        capture: 'viewport',
-        clip: { x: 0, y: 0, width: 200, height: 200 },
-        scale: false,
-        disableTimersAndAnimations: true,
-        screenshotOnRunFailure: true,
-        beforeScreenshot () { },
-        afterScreenshot () { },
-      })
-    })
-  })
-describe('Submit onboarding 1',()=>{
-    it('Submit Form onboarding Experience',()=>{
-        cy.get('form').submit()
-    })
-    it('User Checks URL', () => {
-        cy.wait(3000)
-        cy.url()
-        .should('eq','https://stg.ekrut.com/talent/onboarding/2')
-    })
-})
-//Onboarding Preference success submit
-describe('Submit Onboarding preference success',()=>{
     it('Static Title Job category',()=>{
         cy.wait(1000)
         cy.get('.tl-onboardingv2-text--title').should('have.text','Tell us about your job preferences!')   
@@ -160,4 +76,3 @@ describe('Submit Onboarding preference success',()=>{
         cy.wait(1000)
     })
 })
-
