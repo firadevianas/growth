@@ -1,7 +1,7 @@
 //Onboarding Experience success
 describe('Submit Onboarding experience success',()=>{
     it('login',()=>{
-        cy.login({email:'testing656006@testing.com',pass:'ekrut123'})
+        cy.login({email:'refersepuluh@gmail.com',pass:'ekrut123'})
     })
     it('fill up company name',()=>{
         cy.wait(2000)

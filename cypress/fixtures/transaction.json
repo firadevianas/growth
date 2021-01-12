@@ -1,0 +1,243 @@
+{
+    "meta": {
+        "count": 3,
+        "status": 200,
+        "message": "List of Transaction",
+        "error": "",
+        "type": ""
+    },
+    "error": "",
+    "data": [
+        {
+            "id": 140055,
+            "stage_id": 3,
+            "stage": "Hired",
+            "stage_info": {
+                "type": "SUMMARY",
+                "name": "Hired",
+                "currency": "IDR",
+                "nett_gross": "gross",
+                "salary": 18000000,
+                "other_benefit": "",
+                "history_log": [
+                    {
+                        "id": 12,
+                        "name": "Hired",
+                        "date": "2020-06-24T18:10:24.398351+07:00",
+                        "color": "#FFC300"
+                    },
+                    {
+                        "id": 11,
+                        "name": "Offered",
+                        "date": "2020-06-24T18:09:36.03851+07:00",
+                        "color": "#2819F5"
+                    },
+                    {
+                        "id": 6,
+                        "name": "Interview HRD",
+                        "date": "2020-06-25T18:08:00+07:00",
+                        "color": "#29C3F3"
+                    },
+                    {
+                        "id": 6,
+                        "name": "Interview User",
+                        "date": "2020-06-25T17:59:00+07:00",
+                        "color": "#29C3F3"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Match",
+                        "date": "2020-04-28T17:33:15.273601+07:00",
+                        "color": "#7ED321"
+                    }
+                ],
+                "highlight": {
+                    "label": "Hired on 24 June 2020, 18:10",
+                    "color": "#202124"
+                }
+            },
+            "role_detail": {
+                "id": 8128,
+                "company_id": 5290,
+                "company_name": "Bukan EKRUT",
+                "company_image": {
+                    "thumb": "https://ekrutdev.s3.ap-southeast-1.amazonaws.com/companies/images/000/005/290/thumb/unnamed.png",
+                    "medium": "https://ekrutdev.s3.ap-southeast-1.amazonaws.com/companies/images/000/005/290/medium/unnamed.png",
+                    "original": "https://ekrutdev.s3.ap-southeast-1.amazonaws.com/companies/images/000/005/290/original/unnamed.png"
+                },
+                "company_last_active": "2020-11-27T18:13:44.69287+07:00",
+                "location": "DKI Jakarta, Indonesia",
+                "product_id": 1,
+                "position_name": "Quality Assurance / Engineer",
+                "position_category": "Software Engineering",
+                "position_level": "Senior",
+                "salary": "$ Below your expectation",
+                "posted_at": "2019-10-22T16:40:13.392144+07:00",
+                "applied": false,
+                "applied_at": null,
+                "bookmark_id": null,
+                "bookmarked": false,
+                "bookmark_at": null,
+                "tx_applied": {
+                    "label": ""
+                },
+                "tx_notes": "",
+                "is_closed": false,
+                "opportunity_id": null,
+                "opportunity_name": null
+            },
+            "support_contact": {
+                "name": "",
+                "email": ""
+            }
+        },
+        {
+            "id": 107947,
+            "stage_id": 4,
+            "stage": "Rejected",
+            "stage_info": {
+                "highlight": {
+                    "label": "Rejected on 16 January 2020, 15:53",
+                    "color": "#202124"
+                },
+                "history_log": [
+                    {
+                        "id": 31,
+                        "name": "Rejected",
+                        "date": "2020-01-16T15:53:17.958093+07:00",
+                        "color": "#DD4B39"
+                    },
+                    {
+                        "id": 11,
+                        "name": "Offered",
+                        "date": "2020-01-16T15:49:47.492658+07:00",
+                        "color": "#2819F5"
+                    },
+                    {
+                        "id": 6,
+                        "name": "Interview User",
+                        "date": "2020-01-25T06:00:00+07:00",
+                        "color": "#29C3F3"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Match",
+                        "date": "2020-01-16T15:46:23.919785+07:00",
+                        "color": "#7ED321"
+                    }
+                ],
+                "name": "Rejected",
+                "nett_gross": "Nett",
+                "salary": 10000000,
+                "type": "SUMMARY"
+            },
+            "role_detail": {
+                "id": 8710,
+                "company_id": 5290,
+                "company_name": "EKRUT",
+                "company_image": {
+                    "thumb": "https://ekrutdev.s3.ap-southeast-1.amazonaws.com/companies/images/000/005/290/thumb/unnamed.png",
+                    "medium": "https://ekrutdev.s3.ap-southeast-1.amazonaws.com/companies/images/000/005/290/medium/unnamed.png",
+                    "original": "https://ekrutdev.s3.ap-southeast-1.amazonaws.com/companies/images/000/005/290/original/unnamed.png"
+                },
+                "company_last_active": "2021-01-11T16:34:10.2216+07:00",
+                "location": "DKI Jakarta, Indonesia",
+                "product_id": 1,
+                "position_name": "Product Tester",
+                "position_category": "Product",
+                "position_level": "Associate",
+                "salary": "$ Below your expectation",
+                "posted_at": "2019-12-10T14:07:57.22525+07:00",
+                "applied": false,
+                "applied_at": null,
+                "bookmark_id": null,
+                "bookmarked": false,
+                "bookmark_at": null,
+                "tx_applied": {
+                    "label": ""
+                },
+                "tx_notes": "",
+                "is_closed": false,
+                "opportunity_id": null,
+                "opportunity_name": null
+            },
+            "support_contact": {
+                "name": "",
+                "email": ""
+            }
+        },
+        {
+            "id": 144365,
+            "stage_id": 4,
+            "stage": "Rejected",
+            "stage_info": {
+                "highlight": {
+                    "label": "Rejected on 26 May 2020, 18:29",
+                    "color": "#202124"
+                },
+                "history_log": [
+                    {
+                        "id": 34,
+                        "name": "Rejected",
+                        "date": "2020-05-26T18:29:09.875122+07:00",
+                        "color": "#DD4B39"
+                    },
+                    {
+                        "id": 6,
+                        "name": "Interview HRD",
+                        "date": "2020-05-28T08:30:00+07:00",
+                        "color": "#29C3F3"
+                    },
+                    {
+                        "id": 6,
+                        "name": "Psikotest Invitation (Online)",
+                        "date": "2020-05-26T18:26:51.487705+07:00",
+                        "color": "#29C3F3"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Match",
+                        "date": "2020-05-26T17:49:18.041913+07:00",
+                        "color": "#7ED321"
+                    }
+                ],
+                "name": "Rejected",
+                "type": "SUMMARY"
+            },
+            "role_detail": {
+                "id": 6264,
+                "company_id": 5290,
+                "company_name": "EKRUT",
+                "company_image": {
+                    "thumb": "https://ekrutdev.s3.ap-southeast-1.amazonaws.com/companies/images/000/005/290/thumb/unnamed.png",
+                    "medium": "https://ekrutdev.s3.ap-southeast-1.amazonaws.com/companies/images/000/005/290/medium/unnamed.png",
+                    "original": "https://ekrutdev.s3.ap-southeast-1.amazonaws.com/companies/images/000/005/290/original/unnamed.png"
+                },
+                "company_last_active": "2021-01-11T16:34:10.2216+07:00",
+                "location": "North Jakarta, DKI Jakarta",
+                "product_id": 1,
+                "position_name": "Game Tester",
+                "position_category": "Marketing \u0026 Communications",
+                "position_level": "Owner",
+                "salary": "$ Below your expectation",
+                "posted_at": "2019-07-08T14:54:15.131959+07:00",
+                "applied": false,
+                "applied_at": null,
+                "bookmark_id": null,
+                "bookmarked": false,
+                "bookmark_at": null,
+                "tx_applied": {
+                    "label": ""
+                },
+                "tx_notes": "",
+                "is_closed": false,
+                "opportunity_id": null,
+                "opportunity_name": null
+            },
+            "support_contact": {
+                "name": "",
+                "email": ""
+            }
+        }
+    ]
+}
