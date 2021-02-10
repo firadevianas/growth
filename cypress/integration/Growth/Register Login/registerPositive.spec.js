@@ -83,7 +83,7 @@ describe('verify email mailtrap',()=>{
         cy.get('input[id=user_email]').type('taufiq@ekrut.com')
         cy.get('input[type=password]').type('qwer1234')
         cy.get('input[name=commit]').click()
-        cy.get('.inbox_name').contains('staging').click()
+        cy.get('.inbox_name').contains('dev').click()
         cy.get('.subject').contains('Welcome to EKRUT').eq(0).click()
         cy.wait(1000)
     })

@@ -1,5 +1,5 @@
 var i = 0;
-for(i=0;i<20;i++){
+for(i=0;i<25;i++){
     describe('Login Success',()=>{
     
         it('navigate to the url',()=>{
@@ -65,11 +65,25 @@ for(i=0;i<20;i++){
         it('click button done on modal',()=>{
             cy.get('.container > .btn').click()
         })
+
+        it('visit mailtrap and login mailtrap',()=>{
+            cy.visit('https://mailtrap.io/')
+            cy.get('.signin_block > .button').eq(0).click()
+            cy.get('input[id=user_email]').type('taufiq@ekrut.com')
+            cy.get('input[type=password]').type('qwer1234')
+            cy.get('input[name=commit]').click()
+            cy.get('.inbox_name').contains('dev').click()
+            cy.get('.subject').contains('Welcome to EKRUT').eq(0).click()
+            cy.wait(1000)
+        })
+        it('click verify account',()=>{
+           getIframeBody().find('.main').contains('Verify my account').click()      
+        })
     })
 const id = () => Cypress._.random(0, 1e6)
 const randomId = id()
 const email = `testing${randomId}` + '@testing.com'
-const randomLastname = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 4);
+const randomLastname = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 2);
 const name = 'testing ' + randomLastname
 const phonenum = `81${randomId}`
 }
