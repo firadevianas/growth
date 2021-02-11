@@ -1,6 +1,6 @@
 describe('Onboarding step 1',()=>{
     it('login',()=>{
-        cy.login({email:'autoyttrl@yttrl.com',pass:'qwerty123'})
+        cy.login({email:'autougfyh@ugfyh.com',pass:'kazuchan'})
     })
     it('Check url',()=>{
         cy.wait(1000)

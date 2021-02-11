@@ -2,34 +2,10 @@
     
     {
         "email" : "testing243922@testing.com",
-        "password": "kazuchan"
+        "password": ""
     },
     {
         "email" : "testing300303@testing.com",
-        "password": "kazuchan"
-    },
-    {
-        "email" : "testing315726@testing.com",
-        "password": "kazuchan"
-    },
-    {
-        "email" : "testing914971@testing.com",
-        "password": "kazuchan"
-    },
-    {
-        "email" : "testing541587@testing.com",
-        "password": "kazuchan"
-    },
-    {
-        "email" : "testing779320@testing.com",
-        "password": "kazuchan"
-    },
-    {
-        "email" : "testing203594@testing.com",
-        "password": "kazuchan"
-    },
-    {
-        "email" : "testing271882@testing.com",
-        "password": "kazuchan"
+        "password": ""
     }
 ]

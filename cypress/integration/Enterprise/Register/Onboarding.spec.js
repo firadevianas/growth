@@ -1,7 +1,8 @@
 describe('User do Onboarding', () => {
 
     it('login',()=>{
-        cy.login({email:'testing597580@testing.com',pass:'ekrut123'})
+        cy.visit('http://devel.ekrut.com/employers')
+        cy.login({email:'autougfyh@ugfyh.com',pass:'ekrut123'})
     })
 
     //ONBOARDING STEP 1

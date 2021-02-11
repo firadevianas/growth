@@ -1,6 +1,6 @@
 describe('Onboarding Step 2 company profile',()=>{
     it('login',()=>{
-        cy.login({email:'autoyttrl@yttrl.com',pass:'qwerty123'})
+        cy.login({email:'autougfyh@ugfyh.com',pass:'ekrut123'})
     })
     it('check url',()=>{
         cy.wait(1000)
@@ -23,7 +23,10 @@ describe('Onboarding Step 2 company profile',()=>{
     })
     it('choose office location',()=>{
         cy.findByText('Your office location').click()
-        cy.findByText('South Jakarta').click()
+        cy.get('.css-11unzgr > .css-yt9ioa-option').its('length').then(($lenght)=>{
+            const randSelect = Cypress._.random(0, $lenght - 1);
+            cy.get('.css-11unzgr > .css-yt9ioa-option').eq(randSelect).click()
+        })
     })
     it('fill phone number',()=>{
         cy.get('input[id="phone"]').type('822227743')
